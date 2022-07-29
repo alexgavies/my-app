@@ -7,6 +7,8 @@ import List from './components/List';
 import Evento from './components/Evento';
 import Form from './components/Form';
 import FormUseState from './components/FormUseState';
+import Condicional from './components/Condicional';
+
 
 function App() {
   const nome="Maria"
@@ -36,6 +38,8 @@ function App() {
   <Form></Form>
 
   <FormUseState/>
+
+  <Condicional/>
     </div>
   );
 }
