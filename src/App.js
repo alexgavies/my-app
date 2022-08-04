@@ -8,9 +8,14 @@ import Evento from './components/Evento';
 import Form from './components/Form';
 import FormUseState from './components/FormUseState';
 import Condicional from './components/Condicional';
-
+import SeuNome from './components/SeuNomeLiftState';
+import {useState} from 'react'
+import Saldacao from './components/Saldacao';
 
 function App() {
+
+  const [nome2,setNome]= useState()//State lift
+  
   const nome="Maria"
   return (
     <div className="App">
@@ -40,7 +45,16 @@ function App() {
   <FormUseState/>
 
   <Condicional/>
+
+    <div>
+      <h1>State Lift</h1>
+      <SeuNome setNome={setNome}/> 
+      {nome2}
     </div>
+    <Saldacao nome={nome2}/>
+  </div>
+
+    
   );
 }
 
