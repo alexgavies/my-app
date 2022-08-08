@@ -11,9 +11,35 @@ import Condicional from './components/Condicional';
 import SeuNome from './components/SeuNomeLiftState';
 import {useState} from 'react'
 import Saldacao from './components/Saldacao';
+import {BrowserRouter as Router, Switch, Route, link} from "react-router-dom";
+import Home from './components/Home';
+import Empresa from './components/Empresa';
+import Contato from './components/Contato';
 
 function App() {
+<Router>
+  <ul>
+    <li><link to="/">HOME</link></li>
+    <li><link to="/Empresa">EMPRESA</link></li>
+    <li><link to="/Contato">CONTATO</link></li>
+  </ul>
 
+  <Switch>
+    <Route exact path="/">
+      <Home/>
+    </Route>
+
+    <Route path="/Empresa">
+      <Empresa/>
+    </Route>
+
+    <Route path="/Contato">
+      <Contato/>
+    </Route>
+
+  </Switch>
+
+</Router>
   const [nome2,setNome]= useState()//State lift
   
   const nome="Maria"
@@ -52,6 +78,7 @@ function App() {
       {nome2}
     </div>
     <Saldacao nome={nome2}/>
+    
   </div>
 
     
